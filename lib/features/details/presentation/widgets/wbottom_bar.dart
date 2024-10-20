@@ -25,7 +25,7 @@ class WBottomBar extends StatelessWidget {
                 color: Colors.black.withOpacity(0.05),
                 offset: const Offset(0, -4),
                 blurRadius: 10,
-                spreadRadius: 0.3,
+                spreadRadius: 0.8,
               ),
             ],
           ),
