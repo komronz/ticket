@@ -10,7 +10,10 @@ class DetailsScreen extends StatelessWidget {
 
   static List<Detail> items = [
     Detail(title: "FARE DESCRIPTION", subtitle: "Daily APP"),
-    Detail(title: "TYPE", subtitle: "Valido fino al termine del servizio del giorno della prima validazione, rete URBANA + SUBURBANA GTT"),
+    Detail(
+        title: "TYPE",
+        subtitle:
+            "Valido fino al termine del servizio del giorno della prima validazione, rete URBANA + SUBURBANA GTT"),
     Detail(title: "DURATION", subtitle: "Viaggi in METRO illimitati"),
     Detail(title: "INITIAL VALIDATION", subtitle: "03/10/202421:30"),
     Detail(title: "LAST VALIDATION", subtitle: "03/10/202421:30"),
@@ -28,32 +31,52 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFEDEDED),
+      bottomNavigationBar: WBottomBar(
+        validate: () {},
+        selfValidation: () {},
+      ),
+      appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: const Color(0xFFEDEDED),
-        bottomNavigationBar: WBottomBar(
-          validate: () {},
-          selfValidation: () {},
-        ),
-        appBar: AppBar(
-          backgroundColor: const Color(0xFFEDEDED),
-          leading: GestureDetector(
-            behavior: HitTestBehavior.translucent,
-            onTap: () => Navigator.pop(context),
-            child: const Icon(
-              CupertinoIcons.back,
-              color: Color(0xFF354A85),
-              size: 28,
-            ),
-          ),
-          centerTitle: true,
-          title: const Text(
-            "Selected ticket",
-            style: TextStyle(
-              color: Color(0xFF354A85),
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+        leading: GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () => Navigator.pop(context),
+          child: const Icon(
+            CupertinoIcons.back,
+            color: Color(0xFF354A85),
+            size: 28,
           ),
         ),
-        body: WItemList(items: items));
+        centerTitle: true,
+        title: const Text(
+          "Selected ticket",
+          style: TextStyle(
+            color: Color(0xFF354A85),
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+          ),
+        ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+            child: Text(
+              "Daily",
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                color: Color(0xFF4F4F4F),
+                fontWeight: FontWeight.w600,
+                fontSize: 26,
+              ),
+            ),
+          ),
+          Expanded(child: WItemList(items: items))
+        ],
+      ),
+    );
   }
 }

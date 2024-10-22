@@ -48,7 +48,7 @@ class WBottomBar extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: Color(0xFF4F6054),
+                        color: Color(0xFF354A85),
                       ),
                     ),
                   ),
@@ -57,7 +57,7 @@ class WBottomBar extends StatelessWidget {
               InkWell(
                 onTap: selfValidation,
                 child: Container(
-                  margin: const EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.only(top: 16, bottom: 16),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -70,7 +70,7 @@ class WBottomBar extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
-                      color: Color(0xFF4F6054),
+                      color: Color(0xFF354A85),
                     ),
                   ),
                 ),
